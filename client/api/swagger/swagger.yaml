@@ -1,0 +1,174 @@
+swagger: "2.0"
+info:
+    version: "1.0.0"
+    title: Clients API
+host: localhost:8081
+basePath: /
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+
+  /api/clients/get:
+    get:
+      description: Get list of clients
+      operationId: getClients
+      summary: Get clients
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                _id:
+                  type: string
+                name:
+                  type: string
+                email:
+                  type: string
+                phone:
+                  type: string
+                providers:
+                  type: array
+                  items:
+                    type: string
+
+  /api/clients/save:
+    post:
+      description: Add new client or edit existing
+      summary: Edit clients
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+                _id:
+                  type: string
+                name:
+                  type: string
+                email:
+                  type: string
+                phone:
+                  type: string
+                providers:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: object
+            properties:
+                error:
+                  type: boolean
+                message:
+                  type: string
+
+  /api/clients/del:
+    post:
+      description: Delete clients
+      summary: Delete clients
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+                _id:
+                  type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: object
+            properties:
+                error:
+                  type: boolean
+                message:
+                  type: string
+
+  /api/providers/get:
+    get:
+      description: Get list of providers
+      operationId: getProviders
+      summary: Get providers
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                _id:
+                  type: string
+                name:
+                  type: string
+
+
+  /api/providers/save:
+    post:
+      description: Add new provider or edit existing
+      summary: Edit provider
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+                _id:
+                  type: string
+                name:
+                  type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: object
+            properties:
+                error:
+                  type: boolean
+                message:
+                  type: string
+
+  /api/providers/del:
+    post:
+      description: Delete provider
+      summary: Delete provider
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+                _id:
+                  type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: object
+            properties:
+                error:
+                  type: boolean
+                message:
+                  type: string
+
+
+
+
+
+
+
+
