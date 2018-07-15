@@ -57,4 +57,4 @@ npm run dev
 node backend/server
 
 
-### 9.1) Api documentation can be found at http://localhost:8081/documentation
+### 9.1) Api documentation can be found at http://localhost:8081/api-docs
