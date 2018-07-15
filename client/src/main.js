@@ -6,11 +6,13 @@ import App from '@/App';
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
 
-import './assets/theme.css';
+
 
 Vue.config.productionTip = false;
 
 Vue.use(Vuetify);
+
+import './assets/theme.css';
 
 new Vue({
   el: '#app',

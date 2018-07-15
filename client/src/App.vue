@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <clients/>
+    <v-app>
+      <clients></clients>
+    </v-app>
   </div>
 </template>
 

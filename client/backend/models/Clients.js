@@ -5,7 +5,11 @@ var ClientSchema = new Schema({
   name: String,
   email: String,
   phone: String,
-  providers: [ String ]
+  providers: [ { type: Schema.Types.ObjectId, ref: 'Provider' } ]
+});
+
+var ProviderSchema = new Schema({
+  name: String
 });
 
 var Client = mongoose.model("Client", ClientSchema);

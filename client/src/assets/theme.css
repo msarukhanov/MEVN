@@ -377,9 +377,15 @@ a { color: #1976d2; }
   overflow-y: visible;
 }
 
-.container.grid-list-md .layout .provider--icons.flex {
-  padding-top: 10px;
+.flex.provider--icons {
+  padding-top: 25px !important;
 }
 .v-toolbar form .v-input.v-text-field.error--text {
   margin-bottom: 15px;
+}
+.add--provider {
+  margin-top: 13px;
+}
+#app {
+  margin-top: 0 ;
 }

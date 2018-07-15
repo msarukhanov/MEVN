@@ -12,23 +12,16 @@ module.exports = function (app) {
   });
 
   app.get('/api/clients/get', function (req, res) {
-    Client.find({}, 'name email phone providers', function (error, clients) {
+
+    Client.find({}).populate('providers', '-__v').exec(function (error, clients) {
       if (error) {
         console.error(error);
       }
-      clients.forEach(function (client, key, arr) {
-        arr[key] = {
-          _id: client._id,
-          name: client.name,
-          email: client.email,
-          phone: client.phone,
-          providers: client.providers
-        };
-      });
+      console.log(clients);
       res.send({
         clients: clients
       })
-    }).sort({_id: -1})
+    });
   });
 
   app.post('/api/clients/save', function (req, res) {

@@ -1,11 +1,15 @@
 const express = require('express');
-const pathToSwaggerUi = require('swagger-ui-dist').absolutePath();
+
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan');
 const app = express();
 
-app.use(express.static(pathToSwaggerUi));
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
